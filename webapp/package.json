@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest",
+    "int:test_build": "set NODE_ENV=development && jest",
+    "int:test:watch": "set NODE_ENV=development && jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -23,19 +25,40 @@
     "react-test-renderer": "^16.12.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "mocker-api": "^1.7.6",
+    "antd": "^3.20.3",
+    "clean-webpack-plugin": "^3.0.0"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "reactstrap": "^8.4.1"
   },
   "jest": {
-    "modulePaths": ["/shared/vendor/modules"],
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "modulePaths": [
+      "/shared/vendor/modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "moduleNameMapper": {
-      "moduleFileExtensions": ["js", "jsx"],
-      "moduleDirectories": ["node_modules", "bower_components", "shared"],  
+      "moduleFileExtensions": [
+        "js",
+        "jsx"
+      ],
+      "moduleDirectories": [
+        "node_modules",
+        "bower_components",
+        "shared"
+      ],
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
